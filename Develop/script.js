@@ -14,7 +14,7 @@
 // WHEN I refresh the page
 // THEN the saved events persist
 
-var currentDayEl = ("currentDay");
+var currentDayEl = $("#currentDay");
 // display the current date 
 function displayDate() {
   var rightNow = dayjs().format("dddd, MMMM DD");

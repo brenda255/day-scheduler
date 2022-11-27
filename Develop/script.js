@@ -40,33 +40,33 @@ $("#hour-17 .description").val(localStorage.getItem("hour-17"));
 
 
 
-//go through each time block
 
 var blockTime = document.querySelectorAll(".time-block");
 
-      function schedule() {
-    //check the time and add the classes for background indicators
-    if (blockTime < date) {
-      $(this).removeClass("future");
-      $(this).removeClass("present");
-      $(this).addClass("past");
-      
-    }
-    else if (blockTime === date) {
-      $(this).removeClass("past");
-      $(this).removeClass("future");
-      $(this).addClass("present");
-    }
-    else {
-      $(this).removeClass("present");
-      $(this).removeClass("past");
-      $(this).addClass("future");
+function schedule() {
+  //check the time and add the classes for background 
+  if (blockTime < date) {
+    $(this).removeClass("future");
+    $(this).removeClass("present");
+    $(this).addClass("past");
 
-      schedule ();
-    }
   }
+  else if (blockTime === date) {
+    $(this).removeClass("past");
+    $(this).removeClass("future");
+    $(this).addClass("present");
+  }
+  else {
+    $(this).removeClass("present");
+    $(this).removeClass("past");
+    $(this).addClass("future");
 
-  console.log(blockTime);
+  }
+  schedule();
+}
+
+
+
 
 
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that

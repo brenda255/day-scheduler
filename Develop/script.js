@@ -39,16 +39,18 @@ $("#hour-17 .description").val(localStorage.getItem("hour-17"));
 
 
 
-function schedule() {
-  //go through each time block
-   var blockTime = document.querySelector("#time-block");
-  
+
+//go through each time block
+
+var blockTime = document.querySelectorAll(".time-block");
+// $(".time-block").each(function ())
+      function schedule() {
     //check the time and add the classes for background indicators
     if (blockTime < date) {
       $(this).removeClass("future");
       $(this).removeClass("present");
       $(this).addClass("past");
-      console.log();
+      
     }
     else if (blockTime === date) {
       $(this).removeClass("past");
@@ -59,9 +61,11 @@ function schedule() {
       $(this).removeClass("present");
       $(this).removeClass("past");
       $(this).addClass("future");
-      
+
+      schedule ();
     }
   }
+
   console.log(blockTime);
 
 
